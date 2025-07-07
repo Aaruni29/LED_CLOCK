@@ -56,22 +56,13 @@ All in all, this is more than a clock—it is a tribute to every Indian student 
 ## BOM
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+| Item          | Description                               | Quantity | Cost (USD)   | Cost (INR)    |
+| ------------- | ----------------------------------------- | -------- | ------------ | ------------- |
+| PCB           | JLCPCB Prototype PCB (2 pcs instead of 5) | 2        | $5.64       | ₹478.31       |
+| PCBA          | JLCPCB Assembled Boards (top side)        | 2        | $71.87      | ₹6083.69      |
+| Shipping      | Estimated international (reduced weight)  | -        | $47.00      | ₹3980.90      |
+| Power Adapter | 12V 1A (basic version on Amazon.IN)    | 1        | $4.90       | ₹415.03       |
+| **TOTAL**     |                                           |          | **$129.41** | **₹10957.93** |
 
 
 
