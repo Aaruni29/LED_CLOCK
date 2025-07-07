@@ -8,11 +8,6 @@ Namaste! Welcome to the repository for a simple yet elegant digital clock projec
 
 
 
-This clock uses four large 7-segment displays arranged neatly inside a robust black enclosure, as can be seen in the rendered 3D CAD model. The structure is compact and well-organized, with chamfered edges, precise cutouts for digits, and four mounting holes to securely fasten it in any space—be it your study desk, your home lab, or even an office wall.
-
-
-
-
 ![Screenshot 2025-07-07 221309](https://github.com/user-attachments/assets/853b9fb7-cb6e-4525-a35b-891920acf0e3)
 
 
@@ -26,7 +21,7 @@ At the heart of this system lies a beautifully laid out custom PCB, which handle
 
 
 
-The backside of the PCB is no less interesting—it proudly carries a “Hack Club” mascot and is adorned with five capacitive touch buttons labeled "Hours", "Minutes", "Mode", "Set", and "Color". These allow you to set and customize the clock experience without physical wear-and-tear. It’s an ode to both modern UX and traditional practicality.
+The backside of the PCB is no less interesting it proudly carries a “Hack Club” mascot and is adorned with five capacitive touch buttons labeled "Hours", "Minutes", "Mode", "Set", and "Color". These allow you to set and customize the clock experience without physical wear-and-tear. It’s an ode to both modern UX and traditional practicality.
 
 
 
@@ -41,7 +36,7 @@ The backside of the PCB is no less interesting—it proudly carries a “Hack Cl
 
 ![Screenshot 2025-07-07 222519](https://github.com/user-attachments/assets/a600a66c-2c22-4628-b4e3-48b2fcd8f1e1)
 
-Powering the entire circuit is a microcontroller-based system with carefully routed power supply sections. Each of the 7-segment digits is driven by a separate IC module, and together they orchestrate the display of time in HH:MM format. The schematic, shown in the last image, is a complete manifestation of modular design philosophy. The top portion of the schematic deals with the brain and power management, while the bottom rows contain a field of driver ICs and segment connections that form the heart of this visual symphony.
+Powering the entire circuit is a microcontroller based system with carefully routed power supply sections. Each of the 7-segment digits is driven by a separate IC module, and together they orchestrate the display of time in HH:MM format. The schematic, shown in the last image, is a complete manifestation of modular design philosophy. The top portion of the schematic deals with the brain and power management, while the bottom rows contain a field of driver ICs and segment connections that form the heart of this visual symphony.
 
 
 
