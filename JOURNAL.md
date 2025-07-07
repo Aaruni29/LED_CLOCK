@@ -1,7 +1,7 @@
 
 ---
 Title: "7 segment LED clock"
-Author: "Hewis44"
+Author: "AAruni"
 Description: "A OLD STYLE CLOCK"
 created_at: "2025-07-06"
 Total time spent: "21"
@@ -69,7 +69,93 @@ After reviewing the full schematic in EasyEDA and checking all labels, nets, and
 By the end of this session, I had a full schematic ready: RTC timekeeper, USB-C interface, and transistor-driven 7-segment LEDs. All symbols, labels, and nets were double-checked.
 
 
+
+
+July 6 – PCB Layout, Segment Placement & Enclosure Design (9 hours)
+
+
+![image](https://github.com/user-attachments/assets/cadcaa63-a0ac-43aa-b296-1830bc72a2c5)
+
+
+With the schematic complete, the next phase was the PCB layout and segment arrangement. I opened the layout editor and placed each of the 7-segment components in a clean 4-digit format, leaving proper space for wiring and dot indicators. I aligned each segment module precisely to maintain consistent digit spacing. Two centre dots were added to separate hours and minutes.
+
+
+
+
+![image](https://github.com/user-attachments/assets/a8f5806a-622e-4162-9f0f-9d017e81ba39)
+
+I began routing the control signals  one pin for each segment per digit, using MOSFETs for current sinking and multiplexing logic. The digit select lines were grouped separately, and every segment had a 220Ω series resistor for current limiting.
+![Screenshot 2025-07-07 224607](https://github.com/user-attachments/assets/b64cac68-dfef-4463-b3fe-4677dd74074e)
+
+
+
+BRUHH easyeda is baaaad so imported into easyeda pro so i can design case too
+
+Routing the PCB was like solving a puzzle. The top layer handled horizontal signal paths while the bottom managed vertical routes. I used thick traces for power lines and ensured solid ground planes across both layers to minimize noise. GND vias were generously placed to connect planes and stabilize return paths.
+
+
+![Screenshot 2025-07-07 222436](https://github.com/user-attachments/assets/43cb2654-2dcd-4e64-9175-c60829963159)
+![Screenshot 2025-07-07 222512](https://github.com/user-attachments/assets/ab89a64a-54c2-4d50-afba-17df72d48b4e)
+
+![Screenshot 2025-07-07 222519](https://github.com/user-attachments/assets/683002d8-7b4b-496c-bd4d-01975eca4b90)
+
+
+Once routing was done, I exported the board as a .step file and imported it into Fusion 360. There, I created a custom enclosure — a black PLA case with mounting holes and a faceplate cutout to expose only the segments. The faceplate was designed in white for contrast, with tight tolerances to avoid light bleed. I also left room for USB, buttons, and side vents for future expansion.
+
+![Screenshot 2025-07-07 220132](https://github.com/user-attachments/assets/3b310793-9382-407a-baa5-cde86cd4d76f)
+
+
+
+![Screenshot 2025-07-07 221834](https://github.com/user-attachments/assets/fb570ec2-3506-4dd5-939b-26255bfab044)
+
+
+
+
+
+![Screenshot 2025-07-07 215344](https://github.com/user-attachments/assets/9bb21510-5678-446b-8987-2dc1fa38d2bd)
+
+
+
+![Screenshot 2025-07-07 220140](https://github.com/user-attachments/assets/c0d4beb8-f966-4a11-b315-694d4f0d2d21)
+
+
+
+![Screenshot 2025-07-07 221844](https://github.com/user-attachments/assets/35a5baa8-6d2f-4704-871a-68eb029f0d86)
+
+
+
+
+To visualize everything together, I created 3D renders — top view, angled views, and even an exploded render showing the layers. The assembly started feeling like a real product, not just a DIY hobby.
+
+
+
+
+
+
+![Screenshot 2025-07-07 230028](https://github.com/user-attachments/assets/f956261c-38c7-4c0a-8eef-bad0e8b1c57c)
+
+
+
+
+![Screenshot 2025-07-07 230017](https://github.com/user-attachments/assets/a4c58940-bb1d-4886-8c11-8dddbc09acca)
+
+
+
+
+![Screenshot 2025-07-07 230008](https://github.com/user-attachments/assets/03e09dc3-b5a8-4c07-b4f5-ccae240b9f0f)
+
+
+
+
+
+
+
+
 ![image](https://github.com/user-attachments/assets/810e009f-bbb7-470b-977f-47cef854662b)
+
+
+
+
 
 tried out code given by random yt it kinda kinda worked
 
