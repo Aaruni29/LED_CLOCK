@@ -149,6 +149,15 @@ To visualize everything together, I created 3D renders — top view, angled view
 
 
 
+July 7 – BOM, Firmware Setup & Final Touches (5 hours)
+Today was mostly focused on wrapping up the project and preparing it for production. I began the day by finalizing the Bill of Materials (BOM).
+
+![Screenshot 2025-07-07 233036](https://github.com/user-attachments/assets/2f9452f9-c269-4075-89e8-7bb451a1e331)
+
+
+With the BOM ready, I exported the Gerber files from EasyEDA and uploaded them to JLCPCB. I opted for five boards with a black soldermask and HASL finish to match the visual aesthetic I had in mind. For convenience, I selected partial assembly (PCBA) for two of the boards — getting the ATmega328PB, USB port, oscillator, and passive components soldered directly at the factory. This decision saved me from the tedious and error-prone process of hand-soldering fine-pitch QFN parts. The total cost came to around ₹2,000 for the bare PCBs and ₹2,800 for the partially assembled units, excluding shipping. I chose mail  for delivery
+
+ I shifted focus to firmware development. I used the Arduino core for ATmega328PB, which made setting up the code straightforward. The microcontroller was programmed to fetch the current time from the DS3231 real-time clock (RTC) module every second and convert it to HH:MM format. This information was then sent to the display via multiplexing logic. Each digit was refreshed rapidly using a timer interrupt, so that only one digit was active at a time, but all appeared to be constantly illuminated due to persistence of vision.
 
 
 ![image](https://github.com/user-attachments/assets/810e009f-bbb7-470b-977f-47cef854662b)
@@ -159,3 +168,16 @@ To visualize everything together, I created 3D renders — top view, angled view
 
 tried out code given by random yt it kinda kinda worked
 
+
+
+
+
+
+
+For user interaction, I implemented input handling for three buttons. One button incremented the hours, another adjusted the minutes, and the third toggled between RGB color modes for the WS2812 LEDs. All button inputs were debounced in software to ensure smooth performance. The colon LEDs between the hour and minute digits were programmed to blink every second, mimicking the behavior of commercial digital clocks and adding a bit of life to the display. I also integrated simple animations for the WS2812 RGB LEDs, allowing subtle transitions based on the selected color mode.
+
+
+
+
+
+HOPE IT GETS APPROVED :)
