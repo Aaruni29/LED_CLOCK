@@ -1,0 +1,6 @@
+Item,Description,Quantity,Cost (USD),Cost (INR)
+PCB,JLCPCB Prototype PCB (Gerber_PCB_LED_Clock_Y39),2,5.64,478.31
+PCBA,JLCPCB Economic PCBA (Assembled top side),2,71.87,6083.69
+Shipping,Estimated International Shipping,,47.0,3980.9
+Power Adapter,12V 1A DC Adapter (Amazon/local),1,4.9,415.03
+TOTAL,,,129.41,10957.93
