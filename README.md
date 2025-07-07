@@ -53,8 +53,37 @@ All in all, this is more than a clock—it is a tribute to every Indian student 
 
 
 
+## BOM
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+![image](https://github.com/user-attachments/assets/6587fa26-5b96-4e31-89f7-4c23ac081d95)
+
+
+
 
 ![Screenshot 2025-07-07 230028](https://github.com/user-attachments/assets/7a8e66dc-b681-49db-a2ea-e82e60a85d17)
 
 Please feel free to clone this repository, customize the firmware, play with the layout, and proudly build your own digital clock. Time is yours to display, engineer-style. 
+
 
