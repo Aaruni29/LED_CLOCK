@@ -149,7 +149,8 @@ To visualize everything together, I created 3D renders — top view, angled view
 
 
 
-July 7 – BOM, Firmware Setup & Final Touches (5 hours)
+## July 7 – BOM, Firmware Setup & Final Touches (5 hours)
+
 Today was mostly focused on wrapping up the project and preparing it for production. I began the day by finalizing the Bill of Materials (BOM).
 
 ![Screenshot 2025-07-07 233036](https://github.com/user-attachments/assets/2f9452f9-c269-4075-89e8-7bb451a1e331)
