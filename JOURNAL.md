@@ -15,14 +15,56 @@ July 5 – Ideation, Schematic Design & Core Logic (7 hours)
 
 This whole idea began when I was browsing some retro LED displays online. I saw those large-format wall clocks and thought, "Why not build my own digital clock with bold 7-segment digits?" I didn’t want to use the typical TM1637 or MAX7219 modules – they felt too generic. I wanted to build every segment myself, bit-by-bit, and design the full custom PCB, schematic, and enclosure. This would give me full control over the aesthetics and the logic.
 
+![image](https://github.com/user-attachments/assets/43d2f770-c1d1-4707-a493-4a44dd65b1b0)
 
 I started by finalizing the display layout – a 4-digit 7-segment clock showing HH:MM, separated by two dots in the centre. Each digit had 7 LED segments plus a decimal/dot, and each segment was essentially a bar-shaped LED board controlled via a transistor or direct GPIO through multiplexing. This meant a total of 7×4 + 2 = 30 LEDs, each requiring control logic.
 
-Once the basic concept was clear, I opened EasyEDA and dropped in the main controller – the RP2040. It’s powerful, dual-core, and perfect for precise timing like that required for clock updates and LED refresh rates. I added basic power filtering – 100nF decoupling caps near every VCC line, a 12MHz crystal oscillator with two 15pF capacitors for stable timing, and a QSPI flash chip (W25Q128) since the RP2040 doesn’t come with onboard flash. The USB-C circuitry followed next – 5.1kΩ pull-downs on the CC lines, ESD diodes for protection, and a 3.3V LDO regulator (AMS1117/LD1117) to power the RP2040 from USB.
+![image](https://github.com/user-attachments/assets/00cf3483-2320-4484-8547-2b0d85f35e52)
 
-The schematic started taking shape. For each segment, I used N-channel MOSFETs for switching, so the RP2040 would only sink current when a segment is ON. I added resistors (220Ω) in series with every segment to limit the current. Every digit had its own common cathode control pin, enabling multiplexing. That way, only one digit is active at a time, but all digits appear to be lit due to persistence of vision.
+![image](https://github.com/user-attachments/assets/78fc5e2d-144e-48dc-9aad-2199e6bd4346)
 
-I also included a basic RTC module (DS3231) in the schematic, communicating via I2C. This way, even if power is cut off, the clock time is maintained thanks to the onboard battery of the RTC module. I finished the schematic by adding an AMS1117 3.3V regulator for the logic side and one more for clean power to LEDs if needed.
+
+
+At the heart of the circuit lies the ATmega328PB-AU microcontroller, selected for its Arduino compatibility and ease of programming via UART. The chip was set up on a custom PCB, powered through a clean +5V rail. A pair of 100nF decoupling capacitors stabilized the VCC and AVCC lines, and the AREF pin was also filtered using a capacitor to suppress noise. For timing, I used a 12MHz crystal oscillator with two 22pF capacitors, connected to the XTAL1 and XTAL2 pins. This ensured accurate clock cycles needed for real-time clock polling and multiplexing refreshes.
+
+The reset circuitry involved a 10kΩ pull-up resistor and a 100nF capacitor connected to the DTR line. This allows firmware upload via USB-to-serial converter modules by automatically triggering a reset when flashing code from the Arduino IDE or PlatformIO.
+
+
+
+![image](https://github.com/user-attachments/assets/b425dbdf-a511-420e-ab6c-61fd7c232654)
+
+
+
+
+For timekeeping, I interfaced an I2C-based RTC sensor, likely the DS3231 module. The SDA and SCL lines from the RTC were connected to pins PC4 and PC5 on the ATmega328PB. The microcontroller polls the time regularly and updates the display in real time.
+
+Three push buttons were included — one to increment hours, another for minutes, and a third to toggle LED color modes. These buttons connect to PD2, PD3, and PD4, with either internal pull-ups or external resistors as per layout. The input detection was debounced in code to ensure reliable switching.
+
+
+![image](https://github.com/user-attachments/assets/e869a9ae-2732-4883-960f-e983094ca994)
+
+
+
+For the visual aspect, I added a WS2812 RGB LED chain, connected to pin PD7. These addressable LEDs would add ambient underglow or animated effects behind the digits. Since WS2812s need a clean 5V logic signal, I connected them directly to the ATmega’s I/O without level shifting, keeping the track short to avoid signal issues.
+
+
+![image](https://github.com/user-attachments/assets/76eac9bc-607e-4945-9c55-0e8321224d3c)
+
+
+Lastly, UART pins (TX/RX) were routed for firmware updates and serial debugging. Everything was built as a standalone system no Arduino boards involved  giving me a compact, powerful, and easily programmable digital clock setup.
+
+
+
+![image](https://github.com/user-attachments/assets/666b9f1b-29ea-4d18-9246-350ee95f38ff)
+
+
+
+After reviewing the full schematic in EasyEDA and checking all labels, nets, and power filtering, I finalized the design. The combination of robust microcontroller logic and clean power design laid the perfect foundation for the rest of the build.
+
+![image](https://github.com/user-attachments/assets/14312cb9-e571-4a8b-8f48-d56590632244)
+
+
+
 
 By the end of this session, I had a full schematic ready: RTC timekeeper, USB-C interface, and transistor-driven 7-segment LEDs. All symbols, labels, and nets were double-checked.
 
